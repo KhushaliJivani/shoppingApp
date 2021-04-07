@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:darkgray;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 9px;
+  background-color: white;
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.addprdtbtn {
+  background-color: cornflowerblue;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.addprdtbtn:hover {
+  opacity: 1;
+}
+
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<form action="/add" method ="POST">
+ 
+  <div class="container">
+    <h1>Add Product</h1>
+    <p>fill below details</p>
+    <hr>
+
+    
+    <label for="pname"><b>Name</b></label>
+    <input type="text" placeholder="Enter Product Name" name="pname" id="pname" required>
+
+    <label for="price"><b>Price</b></label>
+    <input type="text" placeholder="Enter Product Price" name="price" id="price" required>
+
+    <label for="quantity"><b>Quantity</b></label>
+    <input type="text" placeholder="Enter Product quantity" name="quantity" id="quantity" required>
+    
+    <button type="submit" class="addprdtbtn">Add</button>
+  </div>
+</form>
+
+</body>
+</html>

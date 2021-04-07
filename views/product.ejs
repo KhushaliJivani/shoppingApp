@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0;
+            }
+            .header {
+            padding: 80px;
+            text-align: center;
+            background:cornflowerblue;
+            color: white;
+            }
+            .header h1 {
+            font-size: 40px;
+            }
+
+            .navbar {
+            overflow: hidden;
+            background-color: #333;
+            }
+
+            .navbar .btn {
+            float: left;
+            display: block;
+            color:darkblue;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            background-color:steelblue;
+            }
+
+            .navbar .btn.right {
+            float: right;
+            }
+
+            .navbar .btn:hover {
+            background-color: #ddd;
+            color: black;
+            }
+        </style>
+    </head>
+    <body>
+            <div class="header">
+            <h1>Shopping Here..</h1>
+            <h3>Make your choice </h3>
+            </div>
+            
+            <div class="navbar">
+           
+                <form action="/productDetail" method="POST">
+                    <input name="Submit" type="Submit" value="Product List" class="btn" />
+                </form>&nbsp;&nbsp;&nbsp;
+            
+            
+            </div>
+    </body>
+</html>
+
+
+  
