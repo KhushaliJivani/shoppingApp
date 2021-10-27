@@ -51,6 +51,7 @@
     <thead>
       <tr class="red">
         <th>Product Name</th>
+        <th>Product Image</th>
         <th>Price</th>
         <th>Quantity</th>
       </tr>
@@ -58,6 +59,7 @@
 
       <tr>
       <td><%= products.productName %></td>
+      <td><img src="../uploads/products/<%= products.productImage %>" height="50px" width="50px"></td>
       <td><%= products.productPrice %></td>
       <td><%= products.quantity %></td>
    </tr>

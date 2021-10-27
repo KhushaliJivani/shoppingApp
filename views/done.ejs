@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:darkgray;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 9px;
+  background-color: white;
+}
+
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: cornflowerblue;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<form action="/">
+  <div class="container">
+    <h1>Done</h1>
+    <p>Thank You For shopping Here your final order is of</p> <h3><%= totalOrderedPrice %></h3>
+    <hr>
+    
+    <button type="submit" class="registerbtn">Logout</button>
+  </div>
+</form>
+
+</body>
+</html>

@@ -46,7 +46,9 @@
     <body>
             <div class="header">
             <h1>Shopping Here..</h1>
-            <h3>Make your choice </h3>
+            <h3>Make your choice </h3><br>
+            <h3>hello <%= regUserData.name %></h3>
+            <img src="../<%= regUserData.image %>" height="50px" width="50px">
             </div>
             
             <div class="navbar">
@@ -54,7 +56,6 @@
                 <form action="/productDetail" method="POST">
                     <input name="Submit" type="Submit" value="Product List" class="btn" />
                 </form>&nbsp;&nbsp;&nbsp;
-            
             
             </div>
     </body>

@@ -7,20 +7,14 @@ const ejs=require('ejs');
 require("./src/database/connection");
 const port = process.env.PORT || 3000;
 var bodyParser=require("body-parser");
-
-
-
 app.use(express.json());
-//app.use(express.json());
 app.use(express.urlencoded({
-    extended: false
+    extended: true
 }));
-
 app.set('view engine', 'ejs');
-
-const staticPath = path.join(__dirname, "public/");
+app.use('/uploads',express.static(path.join(__dirname,'/uploads')));
 const viewsPath = path.join(__dirname, "views/");
-app.use(express.static(staticPath));
+//app.use(express.static(staticPath));
 app.set('views', viewsPath);
 app.use('/',require('./src/routes/router'));
 app.listen(port, () => {

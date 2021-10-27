@@ -2,14 +2,17 @@ const Mongoose = require("mongoose");
 const orderProduct = new Mongoose.Schema({
     productId: {
         type: Mongoose.Schema.Types.ObjectId,
-        ref: 'user',
+        ref: 'product',
     },
     orderProductName:{
         type:String,
     },
+    orderProductImage:{
+        type:String,
+    },
     userId: {
         type: Mongoose.Schema.Types.ObjectId,
-        ref: 'product',
+        ref: 'user',
     },
     totalPrice: {
         type: Number,

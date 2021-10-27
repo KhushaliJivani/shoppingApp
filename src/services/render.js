@@ -31,3 +31,7 @@ exports.buy=(req,res)=>{
 exports.history=(req,res)=>{
     res.render('history');
 }
+
+exports.done=(req,res)=>{
+    res.render('done');
+}

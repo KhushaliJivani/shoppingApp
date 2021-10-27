@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <style>
+        .table-all{
+            align-items: center;
+            text-align: center;
+        }
+        .table{
+            padding-left:40%;
+            padding-top:10%;
+        }
+        .addproducttbtn {
+  background-color: cornflowerblue;
+  color: white;
+  padding: 16px 20px;
+  text-align: center;
+  margin: 8px 500px;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+  opacity: 0.9;
+  float: right
+  }
+.edit{
+    background-color:khaki;
+    color: saddlebrown;
+}
+.delete{
+    background-color:tomato;
+    color:seashell;
+}
+.addproducttbtn:hover {
+  opacity: 1;
+}
+    .red{
+        background-color: cornflowerblue;
+    }
+   
+    </style>
+</head>
+<title>productdetails</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+
+<div class="container table">
+ <form action="/history" method="POST"><button type="submit" class="addproducttbtn">Find History</button></form>
+ <input type="hidden" name="_id" value="<%= products._id %>">
+  <table class="table-all" border="1">
+    <thead>
+      <tr class="red">
+        <th>Product Name</th>
+        <th>Product Image</th>
+        <th>Price</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+
+      <tr>
+      <td><%= products.productName %></td>
+      <td><img src="../uploads/products/<%= products.productImage %>" height="50px" width="50px"></td>
+      <td><%= products.productPrice %></td>
+      <td><%= products.quantity %></td>
+   </tr>
+
+  </table>
+  <form action="/addToCart/<%= products._id %>" method="POST">
+    quantity:<input type="number" name="quantity" placeholder="enter quantity">
+    <button type="submit">ADD</button>
+  </form>
+</div>
+</body>
+</html> 

@@ -53,6 +53,7 @@
     <thead>
       <tr class="red">
         <th>Product Name</th>
+        <th>Product Image</th>
         <th>Price</th>
         <th>Quantity</th>
         <th>Action</th>
@@ -62,9 +63,10 @@
     <% products.forEach(products => { %>
       <tr>
       <td><%= products.productName %></td>
+      <td><img src="../uploads/products/<%= products.productImage %>" height="50px" width="50px"></td>
       <td><%= products.productPrice %></td>
       <td><%= products.quantity %></td>
-      <td><a href="/editUser/<%= products._id %>">Edit</a>&nbsp;&nbsp;&nbsp;<a href="/deleteUser/<%= products._id %>">delete</a>&nbsp;&nbsp;&nbsp;<a href="/buy/<%= products._id %>">Buy</a></td>
+      <td><a href="/editUser/<%= products._id %>">Edit</a>&nbsp;&nbsp;&nbsp;<a href="/deleteUser/<%= products._id %>">delete</a>&nbsp;&nbsp;&nbsp;<a href="/buy/<%= products._id %>">Buy</a>&nbsp;&nbsp;&nbsp;<a href="/cart/<%= products._id %>">Add to cart</a></td>
     </tr>
     <%})%>
 
@@ -72,4 +74,5 @@
 </div>
 </body>
 </html> 
+
 

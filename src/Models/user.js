@@ -1,5 +1,6 @@
 const Mongoose  = require("mongoose");
 const bcrypt=require("bcryptjs");
+//const jwt=require("jsonwebtoken");
 const userSchema=new Mongoose.Schema({
     name:{
         type:String,
@@ -17,6 +18,10 @@ const userSchema=new Mongoose.Schema({
         type:String,
         required:true,
     },
+    image:{
+        type:String,
+        required:true,
+    },
 },
 {
     timestamps:true,
@@ -24,13 +29,9 @@ const userSchema=new Mongoose.Schema({
 
 userSchema.pre("save",async function(next){
     if(this.isModified("password")){
-        //const passwordHash= await bcrypt.hash(password,10);
-        console.log(`current password is ${this.password}`);
         this.password=await bcrypt.hash(this.password,10);
-        console.log(`current password is ${this.password}`);
     }
     next();
 })
-
 const Register=new Mongoose.model("User",userSchema);
 module.exports=Register;

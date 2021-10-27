@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .table-all{
+            align-items: center;
+            text-align: center;
+        }
+        .table{
+            padding-left:40%;
+            padding-top:10%;
+        }
+        .addproducttbtn {
+  background-color: cornflowerblue;
+  color: white;
+  padding: 16px 20px;
+  text-align: center;
+  margin: 8px 500px;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+  opacity: 0.9;
+  float: right
+  }
+.edit{
+    background-color:khaki;
+    color: saddlebrown;
+}
+.delete{
+    background-color:tomato;
+    color:seashell;
+}
+.addproducttbtn:hover {
+  opacity: 1;
+}
+    .red{
+        background-color: cornflowerblue;
+    }
+   
+    </style>
+</head>
+<title>productdetails</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+
+<div class="container table">
+    <form action="/productDetail" method="POST"><button type="submit" class="producttbtn">Available Products</button></form> 
+ <form action="/history" method="POST"><button type="submit" class="historybtn">Find History</button></form>
+
+
+    <h1>Cart Items</h1>
+    <% dispCart.forEach(dispCart => { %>
+        <form action="/editCart/<%= dispCart._id %>" method="POST">
+        <tr>
+        <td>ProductName:</td><td><input type="text" name="productNname" value="<%= dispCart.productName %>" readonly></td></tr><br>
+        <tr><td>Quantity:</td><td><input type="text" name="quantity" value="<%= dispCart.quantity %>"></td></tr><br>
+        <tr>
+            <td>Product</td>
+            <td><img src="../uploads/products/<%= dispCart.productImage %>" height="50px" width="50px"></td>
+        </tr>
+        <tr>
+        <td><a href="/removeItemCart/<%= dispCart._id %>">Remove</a></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td><button type="submit">Add</button></td></tr><br>
+        </form>
+    <%})%>
+
+    <a href="/buy">Place Order</a>
+
+</div>
+</body>
+</html> 
+
+

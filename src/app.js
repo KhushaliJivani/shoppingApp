@@ -25,7 +25,6 @@ app.get('/register', (req, res) => {
     res.render('registerUser');
 })
 app.use(bodyParser.json());
-//app.use(express.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
@@ -40,7 +39,6 @@ app.post('/register', async (req, res) => {
             mobileNo: req.body.number,
             password: req.body.psw,
         })
-        //password hash
         const registered=await registerUser.save();
         res.status(201).render("index");
     } catch (error) {
@@ -53,7 +51,6 @@ app.get('/login', (req, res) => {
 })
 app.post('/login', async (req, res) => {
     try {
-        // console.log(req.body.name);
         const email=req.body.email;
         const password=req.body.psw;
 
